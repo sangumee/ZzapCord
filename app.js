@@ -1,9 +1,10 @@
 var express = require('express');
-var BodyParser = require('body-parser');
+var bodyParser = require('body-parser');
 var app = express();
 var path = require('path');
 app.locals.pretty = true;
 app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'pug');
 app.use(bodyParser.urlencoded({
   extended: false
