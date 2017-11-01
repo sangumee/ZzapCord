@@ -25,6 +25,11 @@ app.get('/', function(req,res){
   res.render('login');
 });
 
+// Test Page
+app.get('/visual', function(req,res){
+  res.render('visual');
+});
+
 app.listen(80, function() {
   console.log('Connected 80 port!!!');
 });
