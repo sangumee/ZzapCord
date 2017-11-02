@@ -18,18 +18,21 @@
       </div>
     </div>
     <div class="right_login_container">
-      <h1>ZzapC0rd에 오신것을 환영합니다</h1>
+      <h1 class="login_title">Login Game World!</h1>
       <div class="email_container">
-        <label>이메일</label>
-        <input type="email" id="register_email" />
+        <label class="auth_label">이메일</label>
+        <input type="email" id="register_email" class="auth_form"/>
       </div>
       <div class="password_container">
-        <label>비밀번호</label>
-        <input type="password" id="register_password" />
+        <label class="auth_label">비밀번호</label>
+        <input type="password" id="register_password" class="auth_form"/>
       </div>
-      <a href="/find_password"><label>비밀번호를 잊으셨나요?</label></a>
+      <a href="/find_password"><label class="forgot_password">비밀번호를 잊으셨나요?</label></a>
       <div class="login_button_container">
-        <input type="submit" value="로그인" />
+        <button type="submit" class="login_button">로그인</button>
+      </div>
+      <div class="register">계정이 없으신가요?
+        <a class="register_click" href="/register">가입하기</a>
       </div>
     </div>
   </div>
