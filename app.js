@@ -20,14 +20,14 @@ var server = OrientDB({
 });
 var db = server.use('zzapcord');
 
-// Main Page
+// Login Page (Now it's First Showing Page), But Later Needs Welcome Page
 app.get('/', function(req,res){
   res.render('login');
 });
 
-// Test Page
-app.get('/visual', function(req,res){
-  res.render('visual');
+// Main Page , After Login
+app.get('/main', function(req,res){
+  res.render('main');
 });
 
 app.listen(80, function() {
