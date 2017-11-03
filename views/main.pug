@@ -14,14 +14,21 @@ html
   body
     .main_container
       .game_list_container
-        .game_list
-          i#social.material-icons people
+        .game_list_home
+          i.material-icons people
         .friends_online
-          | NULL명 접속 중
+          | 1명 접속 중
         .seperator
         //- .game_list
-        each val in [1,2,3,4,5]
+        each game_list in game_lists
           div(class= ("game_list"))
+            - rid = encodeURIComponent(game_list['@rid'])
+            img(src=game_list.game_image class= ("game_list_logo"))/
+        // Game_list_add
+        .game_list_add
+            i.material-icons add
+        // Seperator
+        .seperator
       .channel_list
         .channel_name
           h1.channe_name_data Game Name
@@ -35,10 +42,10 @@ html
             span.username 상구미
             span.database_code #01
           .control_box
-            .mic
-              i#control_box_icons.material-icons mic
-              i#control_box_icons.material-icons headset
-              i#control_box_icons.material-icons settings
+            .control_box_layout
+              i.material-icons mic
+              i.material-icons headset
+              i.material-icons settings
       .chat_box
       .friend_list
     // Bootstrap
