@@ -24,7 +24,7 @@ var db = server.use('zzapcord');
 app.get('/', function(req,res){
   res.render('login');
 });
- 
+
 // Main Page , After Login
 app.get(['/main','/main/:id'], function(req,res){
   var sql='SELECT FROM game_list';
