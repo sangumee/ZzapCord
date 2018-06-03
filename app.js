@@ -1,24 +1,5 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var app = express();
-var path = require('path');
-app.locals.pretty = true;
-app.set('views', path.join(__dirname, 'views'));
-app.use(express.static(__dirname + '/public'));
-app.set('view engine', 'pug');
-app.use(bodyParser.urlencoded({
-  extended: false
-}));
-
-// Connect OrientDB Database
-var OrientDB = require('orientjs');
-var server = OrientDB({
-  host: 'sangumserver.iptime.org',
-  port: 2424,
-  username: 'root',
-  password: 'password123' // Bad Method
-});
-var db = server.use('zzapcord');
+var app = require('./config/express')();
+var db=require('./config/db')();
 
 // Login Page (Now it's First Showing Page), But Later Needs Welcome Page
 app.get('/', function(req,res){
@@ -41,6 +22,6 @@ app.get(['/main','/main/:id'], function(req,res){
   })
 });
 
-app.listen(80, function() {
-  console.log('Connected 80 port!!!');
+app.listen(2000, function() {
+  console.log('Connected 2000 port!!!');
 });

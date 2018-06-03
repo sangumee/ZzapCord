@@ -1,0 +1,51 @@
+extends ./layout
+
+block HTML
+  body
+    .main_container
+      .game_list_container
+        .game_list_home
+          i.material-icons people
+        .friends_online
+          | 1명 접속 중
+        .seperator
+        //- .game_list
+        each game_list in game_lists
+          div(class= ("game_list"))
+            - rid = encodeURIComponent(game_list['@rid'])
+            img(src=game_list.game_image class= ("game_list_logo"))/
+        // Game_list_add
+        .game_list_add
+          a(href='#', data-popup-open='example')
+            i.material-icons
+              | add
+              .popup(data-popup='example')
+                .popup-inner
+                  .popup-contents
+                    a.popup-close(data-popup-close='example', href='#') X
+                    p 방제목
+                    input(type='text')
+
+        // Seperator
+        .seperator
+      .channel_list
+        .channel_name
+          h1.channe_name_data Game Name
+          .channel_dropdown
+            i.material-icons keyboard_arrow_down
+        .channel_box
+          h1.name 로 그 인 완 료
+        .channel_profile
+          .profile_image
+          .profile_info
+            span.username 상구미
+            span.database_code #01
+          .control_box
+            .control_box_layout
+              i.material-icons mic
+              i.material-icons headset
+              i.material-icons settings
+      .chat_box
+      .friend_list
+    include ./bootstrap
+    
